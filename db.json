@@ -1,0 +1,22 @@
+{
+  "petsList": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "age": "typicode",
+      "breed": "ggg"
+    },
+    {
+      "name": "dog",
+      "age": "12",
+      "breed": "french",
+      "id": 2
+    },
+    {
+      "name": "hhg",
+      "age": "22",
+      "breed": "sf",
+      "id": 4
+    }
+  ]
+}
