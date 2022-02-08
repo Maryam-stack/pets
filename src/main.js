@@ -11,7 +11,7 @@ import addNew from './components/add.vue';
 import appGet from './components/get.vue';
 
 Vue.config.productionTip = false
-//Vue.use(router)
+Vue.use(VueRouter)
 
 const routes = [
   { path:'/', component: appGet},
@@ -22,7 +22,7 @@ const router = new VueRouter({
   routes 
 })
 
-Vue({
+new Vue({
   vuetify,
   router,
   render: h => h(App)
