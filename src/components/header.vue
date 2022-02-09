@@ -20,12 +20,12 @@
         <v-list-item-group
           v-model="group"
           active-class="deep-purple--text text--accent-4"
-        ><router-link to="appGet">
+        ><router-link to="/">
           <v-list-item>
             <v-list-item-title>Pets List</v-list-item-title>
           </v-list-item>
           </router-link>
-          <router-link to="petSearch">
+          <router-link to="search">
           <v-list-item>
             <v-list-item-title>Pets Search</v-list-item-title>
           </v-list-item>
