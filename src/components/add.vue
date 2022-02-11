@@ -79,7 +79,7 @@ export default {
             submit(){
                 axios({
                     method:'post',
-                    url:'http://localhost:3004/petsList',
+                    url:'http://localhost:3400/petsList',
                     data: this.pet
                 })
                 .then( () => {

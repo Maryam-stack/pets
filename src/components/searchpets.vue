@@ -21,6 +21,7 @@
        <v-btn
               icon
               color="green"
+              @click="updateImage"
             >
               <v-icon>mdi-cached</v-icon>
             </v-btn>
@@ -51,8 +52,13 @@
     data()
     {
       return{
-         src:'https://picsum.photos/200/300',
+         url:'https://dog.ceo/api/breeds/image/random',
          alt:'Another image'
+      }
+    },
+    methods:{
+      updateImage(){
+        return this.url
       }
     }
     

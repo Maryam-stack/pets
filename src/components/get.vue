@@ -4,6 +4,7 @@
         class="mx-auto"
         max-width="344"
         outlined
+        
         v-for="(pet) in pets"
         :key="pet.id"
         >
@@ -25,7 +26,7 @@
         outlined
         rounded
         text
-        @click="getPet(pet.id)"
+        @click="updatePet(pet.id)"
       >
         Edit
       </v-btn>
@@ -43,7 +44,9 @@
 </template>
 <script>
     import axios from 'axios';
+    
     export default {
+      //props: ['pet'],
         data(){
             return {
                 pets:[]
@@ -51,7 +54,7 @@
         },
         methods:{
             loadPets(){
-                axios.get('http://localhost:3004/petsList')
+                axios.get('http://localhost:3400/petsList')
                 .then( response => {
                     this.pets = response.data
                 })
@@ -59,7 +62,7 @@
                     console.log( error )
                 })
             },
-            removePet(id){ axios.delete(`http://localhost:3004/petsList/${id}`)
+            removePet(id){ axios.delete(`http://localhost:3400/petsList/${id}`)
              .then(response => {
                 console.log(response.data) ;
              })
@@ -72,9 +75,8 @@
 
             },
             getPet(id) {
-          axios.get(`http://localhost:3004/petsList/${id}`)
+          axios.get(`http://localhost:3400/petsList/${id}`)
         .then(response => {
-          this.pets = response.data;
           console.log(response.data);
         })
         .catch(e => {
@@ -82,13 +84,17 @@
         })
             },
             updatePet(id){
-      axios.put(`http://localhost:3004/petsList/${id}` )
+      axios.put(`http://localhost:3400/petsList/${id}` )
         .then(response => {
+          //this.pet.name= 'updated'
+          //response.data= this.pet.name
           console.log(response.data);
         })
         .catch(e => {
           console.log(e);
-        })        
+        }).finally(()=>{
+                    location.reload(); 
+                })        
         }
         },
         mounted(){
