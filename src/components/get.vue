@@ -46,7 +46,6 @@
     import axios from 'axios';
     
     export default {
-      //props: ['pet'],
         data(){
             return {
                 pets:[]
@@ -74,20 +73,12 @@
                 })
 
             },
-            getPet(id) {
-          axios.get(`http://localhost:3400/petsList/${id}`)
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        })
-            },
             updatePet(id){
-      axios.put(`http://localhost:3400/petsList/${id}` )
+      axios.put(`http://localhost:3400/petsList/${id}`, 
+      {name: 'abc',
+      age: 12,
+      breed: 'xyz'} )
         .then(response => {
-          //this.pet.name= 'updated'
-          //response.data= this.pet.name
           console.log(response.data);
         })
         .catch(e => {
